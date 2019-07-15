@@ -22,6 +22,7 @@
     <header></header>
     <div class="nav">
         <%--    <a href="" id="logo"><include:img file="logo.png" alt="My Logo"/> </a>--%>
+        <a href="#">Logged as ${user}</a>
         <a href="login">Checkout</a>
         <a href="logout">Log out</a>
         <a href="#">Cart : [${cart.getSize()}]</a>
@@ -47,7 +48,13 @@
                     </div>
                 </div>
             </c:forEach>
-            <a href="success">Confirm checkout</a>
+            <div>
+                <c:if test="${cart.getSize() != null}">
+                    <p><strong>Total price: </strong>${cart.getTotal()} </p>
+                    <a href="success"><button>Buy</button></a>
+                </c:if>
+            </div>
+            
         </div>
         <div class="allProduct">
             <c:forEach items="${products}" var="product">
@@ -57,15 +64,15 @@
                     </a>
                     <div class="productTitle"><c:out value="${product.getName()}" /></div>
                     <div class="productDesc">
-              <span class="productPrice">
-                Price: <c:out value="${product.getPrice()}" />
-              </span>
-                        <span class="addToCart">
-                    <form action="" method="post">
-                        <input class="hiddenProd" name="productId" value="${product.getId()}"/>
-                        <input type="submit" name="btn2" value="Add to cart" />
-                    </form>
-              </span>
+                      <span class="productPrice">
+                        Price: <c:out value="${product.getPrice()}" />
+                      </span>
+                      <span class="addToCart">
+                        <form action="" method="post">
+                            <input class="hiddenProd" name="productId" value="${product.getId()}"/>
+                            <input type="submit" name="btn2" value="Add to cart" />
+                        </form>
+                      </span>
                     </div>
                 </div>
             </c:forEach>
@@ -73,7 +80,7 @@
     </div>
 
     <footer>
-        <h6>If you need any help contact us <a href="<c:url value="index.jsp"/>"><%= support_email %></a></h6>
+        <h6>If you need any help contact us <a href="<c:url value="#"/>"><%= support_email %></a></h6>
     </footer>
 </body>
 </html>

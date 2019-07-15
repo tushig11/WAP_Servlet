@@ -23,14 +23,14 @@
 <body>
 <h2>Signup Form</h2>
 <form action="create" method="post">
-    Username: <input type='text' name='username'/><br/>
-    Password: <input name="password" type="password" /><br/>
-    <input type="submit" name="loginBtn" value="Sign Up"/> <a href="login"><button>Login</button></a>
+    Username: <input type='text' name='username' required/><br/>
+    Password: <input name="password" type="password" required/><br/>
+    <input type="submit" name="loginBtn" value="Sign Up"/> <a href="login">Login</a>
     <p><strong>${message}</strong></p>
 </form>
 
 <footer>
-    <h6>If you need any help contact us <a href="<c:url value="index.jsp"/>"> <%= support_email %></a></h6>
+    <h6>If you need any help contact us <a href="<c:url value="#"/>"> <%= support_email %></a></h6>
 </footer>
 </body>
 </html>

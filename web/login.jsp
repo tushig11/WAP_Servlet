@@ -46,7 +46,7 @@
     </form>
 
     <footer>
-    <h6>If you need any help contact us <a href="<c:url value="index.jsp"/>"> <%= support_email %></a></h6>
+    <h6>If you need any help contact us <a href="<c:url value="#"/>"> <%= support_email %></a></h6>
     </footer>
 </body>
 </html>

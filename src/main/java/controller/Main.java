@@ -1,6 +1,7 @@
 package controller;
 
 import dao.ProductDAO;
+import dao.UserDAO;
 import model.Cart;
 import model.Product;
 
@@ -26,6 +27,7 @@ public class Main extends HttpServlet {
     public void init() throws ServletException {
         productDAO = new ProductDAO();
         productList = productDAO.getAllProducts();
+        UserDAO.DefaultUsers();
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

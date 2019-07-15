@@ -37,4 +37,9 @@ public class Cart {
         }
         return sum;
     }
+
+    @Override
+    public String toString() {
+        return "Total: " + this.getTotal();
+    }
 }

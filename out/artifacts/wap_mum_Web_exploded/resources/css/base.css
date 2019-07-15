@@ -49,3 +49,8 @@ body{
     width: 0px;
     visibility: hidden;
 }
+#success {
+    text-align: center;
+    color: black;
+    font-size: 30px;
+}

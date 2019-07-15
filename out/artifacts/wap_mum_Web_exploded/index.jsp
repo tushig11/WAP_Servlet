@@ -33,8 +33,9 @@
 
   <div class="nav">
 <%--    <a href="" id="logo"><include:img file="logo.png" alt="My Logo"/> </a>--%>
+    <a href="#">Hello ${user}</a>
     <a href="login">Checkout</a>
-    <a href="logout">Log out</a>
+    <c:if test="${user!='Guest'}"><a href="logout">Log out</a></c:if>
     <a href="#">Cart : [${cart.getSize()}]</a>
   </div>
 
@@ -61,7 +62,7 @@
   </div>
 
   <footer>
-    <h6>If you need any help contact us <a href="<c:url value="index.jsp"/>"><%= support_email %></a></h6>
+    <h6>If you need any help contact us <a href="<c:url value="#"/>"><%= support_email %></a></h6>
   </footer>
 </body>
 </html>

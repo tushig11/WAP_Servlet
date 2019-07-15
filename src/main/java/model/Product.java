@@ -68,8 +68,24 @@ public class Product {
         this.price = price;
     }
 
+
     @Override
-    public String toString() {
-        return this.getId()+":"+this.getName();
+    public boolean equals(Object obj)
+    {
+        if(this == obj)
+            return true;
+
+        if(obj == null || obj.getClass()!= this.getClass())
+            return false;
+
+        Product prod = (Product) obj;
+
+        return (prod.name == this.name && prod.id == this.id);
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return this.id;
     }
 }

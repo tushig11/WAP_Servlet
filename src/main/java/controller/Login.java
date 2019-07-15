@@ -14,16 +14,7 @@ import java.util.HashMap;
 @WebServlet(name = "Login", value="/login")
 public class Login extends HttpServlet {
 
-    private UserDAO userDao;
-    private HashMap<String, User> users;
-    private ProductDAO productDAO;
-
-    @Override
-    public void init() throws ServletException {
-        userDao = new UserDAO();
-        productDAO = new ProductDAO();
-        users = userDao.getAllUsers();
-    }
+    private HashMap<String,User> users = UserDAO.getAllUsers();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");

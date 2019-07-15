@@ -14,16 +14,7 @@ import java.util.HashMap;
 @WebServlet(name = "Sign_up", value="/create")
 public class Sign_up extends HttpServlet {
 
-    private UserDAO userDao;
-    private HashMap<String, User> users;
-    private ProductDAO productDAO;
-
-    @Override
-    public void init() throws ServletException {
-        userDao = new UserDAO();
-        productDAO = new ProductDAO();
-        users = userDao.getAllUsers();
-    }
+    private HashMap<String, User> users = UserDAO.getAllUsers();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
@@ -37,13 +28,13 @@ public class Sign_up extends HttpServlet {
         }else{
             //Creating new session
             HttpSession session = request.getSession();
+            UserDAO.addUser(new User(username,password));
             session.setAttribute("username", username);
             session.setMaxInactiveInterval(24*60*60); //second
-            userDao.addUser(new User(username,password));
             Cookie c = new Cookie("member", username);
             c.setMaxAge(1800);
             response.addCookie(c);
-            response.sendRedirect(request.getContextPath());
+            response.sendRedirect("checkout");
         }
     }
 

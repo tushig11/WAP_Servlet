@@ -1,11 +1,14 @@
 package model;
 
+
+
 public class User {
 
     private int id;
     private String username;
     private String password;
     private String address;
+    private Cart card = new Cart();
 
     //constructors
     public User(String username, String password){
@@ -47,5 +50,13 @@ public class User {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public void setCard(Cart card) {
+        this.card = card;
+    }
+
+    public Cart getCard() {
+        return card;
     }
 }
