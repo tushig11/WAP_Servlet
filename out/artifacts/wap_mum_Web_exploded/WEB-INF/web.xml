@@ -5,29 +5,12 @@
          version="4.0">
     <context-param>
         <param-name>support-email</param-name>
-        <param-value>cstech@mum.edu</param-value>
+        <param-value>gjavkhlan@mum.edu</param-value>
     </context-param>
 
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 
-    <servlet>
-        <servlet-name>DemoServlet</servlet-name>
-        <servlet-class>HelloServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>DemoServlet</servlet-name>
-        <url-pattern>/simple</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>SupportServlet</servlet-name>
-        <servlet-class>Support</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>SupportServlet</servlet-name>
-        <url-pattern>/support</url-pattern>
-    </servlet-mapping>
 
 </web-app>
